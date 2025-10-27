@@ -1,26 +1,26 @@
-from os import path
+from handlers import handle_write
+from questions import title, description, installation, author, contact, license, confirm
 
-# with open('README2.md', 'w') as file_handler:
-#     try:
-#         file_handler.write('# TITLE')
-#     except Exception as e:
-#         print(f"An error occurred: {e}")
-#         raise e
-
-
-try:
-    with open('README3.md', 'r') as file_handler:
-        file_content = file_handler.read()
-        print(file_content)
-except Exception as e:
-    print(f"An error occurred: {e}")
-    # raise e
-
-# if path.exists('README2.md'):
+readme_content = f"""# About The Project
+\n### {title}
+\n{description}
+\n## Installation Instructions
+\n{installation}
+\n## Usage
+\nUse this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+\n## License
+\nDistributed under the {license}. See LICENSE.txt for more information.
+\n## Contact
+\n### Author
+\n{author}
+\n### Please contact me:
+\n{contact}
+"""
 
 
 def main():
-    print("")
+    if confirm:
+        handle_write(readme_content)
 
 
 if __name__ == "__main__":
