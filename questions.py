@@ -1,25 +1,19 @@
+from InquirerPy import inquirer
 
-project_title = {
-    "type": "input",
-    "message": "Project Title:",
-    "title": "title"
-}
 
-project_description = {
-    "type": "input",
-    "message": "Project Description",
-    "description": "description"
+title = inquirer.text(message="Project Title:").execute()
+description = inquirer.text(message="Project Descripton:").execute()
+installation = inquirer.text(message="Enter installation message:").execute()
+licenses = inquirer.select(
+    message="Pick a License:",
+    choices=[
+        "Apache License 2.0",
+        "GNU General Public License (GPL) v3",
+        "Mozilla Public License 2.0",
+        "BSD 3-Clause License",
+    ],
+    default="MIT License",
+).execute()
 
-}
-project_license = {
-    "type": "list",
-    "message": "Pick A License:",
-    "choices": ["MIT"],
-},
 
-confirmation = {
-    "type": "confirm",
-    "message": "Confirm?"
-}
-
-questions = [project_title, project_description, project_license, confirmation]
+confirm = inquirer.confirm(message="Confirm?").execute()
