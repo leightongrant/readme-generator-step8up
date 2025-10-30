@@ -1,5 +1,13 @@
-from handlers import handle_write
-from questions import title, description, installation, author, contact, license, confirm
+from utilities import handle_write
+from questions import (
+    title,
+    description,
+    installation,
+    author,
+    contact,
+    license,
+    confirm,
+)
 
 readme_content = f"""# About The Project
 \n### {title}
