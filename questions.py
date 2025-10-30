@@ -3,11 +3,39 @@ from utilities import print_section_title
 
 print(
     """
-Welcome ReadmeGenPY.
+====================================
+Welcome to ReadmeGenPY! 📝
+====================================
 
-Please follow the prompts to generate your readme.
+This CLI tool helps you generate professional README.md files through interactive prompts.
 
-You can use markdown to add your installation steps on each line. Press Esc + Enter when done. Eg: 1. Create virtual environment `python3 -m venv .venv` 2. Install requirements 
+How to Use This Tool:
+--------------------
+1. Answer each prompt with relevant information about your project
+2. For multiline inputs (like installation steps):
+   - Type your content, using markdown formatting
+   - Press Esc + Enter when you're done
+   - Use arrows to navigate through previous entries
+
+Markdown Examples:
+----------------
+• Headers:      # Main Title
+               ## Subheading
+• Lists:        * Bullet point
+               1. Numbered item
+• Code:         `pip install package`
+• Code blocks:  ```python
+               your_code_here
+               ```
+• Links:        [Text](URL)
+
+Tips:
+----
+• You can use the default values as templates
+• Press Ctrl+C at any time to exit
+• Your README will be generated in the current directory
+
+Let's begin creating your README!
 """
 )
 
