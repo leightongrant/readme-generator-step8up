@@ -45,7 +45,7 @@ def ask_questions():
         message="Usage: ",
         instruction=instructions(),
         multiline=True,
-        default="1. Answer each prompt with relevant information about your project",
+        default="* Answer each prompt with relevant information about your project",
         mandatory=True,
         amark="✔",
     ).execute()
@@ -77,10 +77,11 @@ def ask_questions():
         instruction=instructions(),
         multiline=True,
         mandatory=True,
+        default="* Email: dev@leightongrant.me",
         amark="✔",
     ).execute()
 
-    confirm = inquirer.confirm(message="Confirm?").execute()
+    confirm = inquirer.confirm(message="Confirm?", amark="✔",).execute()
 
     return [title,
             description,

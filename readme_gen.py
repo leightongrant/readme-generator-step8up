@@ -1,5 +1,8 @@
 from os import path
 from sys import exit
+from rich.console import Console
+
+console = Console()
 
 
 class ReadmeGen:
@@ -14,7 +17,7 @@ class ReadmeGen:
         self.author = author
         self.contact = contact
 
-    def content(self):
+    def content(self) -> str:
         readme_content = f"""# About The Project
         \n### {self.title}
         \n{self.description}
@@ -33,21 +36,27 @@ class ReadmeGen:
         """
         return readme_content
 
-    def write_readme(self) -> None:
+    def write_file(self) -> None:
         try:
             with open("README.md", "w") as file_handler:
-                if path.exists("README.md"):
-                    confirm = input(
-                        "README.md already exist. Do you want to overwrite? y/n: "
-                    )
-                    if confirm == "y":
-                        file_handler.write(self.content())
-                        print("Your README.md has been created.")
-                    elif confirm == "n":
-                        print("Your file was not overwritten.")
-                        exit(0)
-                    else:
-                        self.write_readme()
-
+                file_handler.write(self.content())
+                console.print(
+                    "\nYour README.md has been created.\n", style="bold blue")
         except Exception as e:
-            print(f"An error occurred: {e}")
+            console.print(f"An error occurred: {e}", style="red")
+
+    def write_readme(self) -> None:
+        if path.exists("README.md"):
+            console.print("\nREADME.md already exist. Do you want to overwrite? y/n:\n",
+                          style="blink bold red underline on white")
+            confirm = input()
+            if confirm == "y":
+                self.write_file()
+            elif confirm == "n":
+                console.print("\nYour file was not overwritten.\n",
+                              style="bold green")
+                exit(0)
+            else:
+                self.write_readme()
+        else:
+            self.write_file()

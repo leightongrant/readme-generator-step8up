@@ -11,6 +11,8 @@ readme_gen = ReadmeGen(
 def main():
     if confirm:
         readme_gen.write_readme()
+    else:
+        print("Goodbye")
 
 
 if __name__ == "__main__":
