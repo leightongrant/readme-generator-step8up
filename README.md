@@ -6,7 +6,8 @@ A Python-based command-line tool to generate professional README.md files throug
         
 ## Installation Instructions
         
-installation
+* Clone repository: `git clone repo`
+
         
 ## Usage
         
@@ -16,7 +17,7 @@ installation
         
 ## License
         
-Distributed under the MIT LicenseApache License 2.0.
+Distributed under the MIT License.
         
 ## Contact
         
@@ -26,6 +27,5 @@ Leighton Grant
         
 ### Please contact me:
         
-* dev@leightongrant.me
 
         

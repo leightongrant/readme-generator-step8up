@@ -42,7 +42,12 @@ class ReadmeGen:
                     )
                     if confirm == "y":
                         file_handler.write(self.content())
+                        print("Your README.md has been created.")
+                    elif confirm == "n":
+                        print("Your file was not overwritten.")
+                        exit(0)
+                    else:
+                        self.write_readme()
 
-                print("Your README.md has been created.")
         except Exception as e:
             print(f"An error occurred: {e}")

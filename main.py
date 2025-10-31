@@ -1,14 +1,7 @@
 from readme_gen import ReadmeGen
-from questions import (
-    title,
-    description,
-    installation,
-    usage,
-    license,
-    author,
-    contact,
-    confirm,
-)
+from questions import ask_questions
+
+title, description, installation, usage, license, author, contact, confirm = ask_questions()
 
 readme_gen = ReadmeGen(
     title, description, installation, usage, license, author, contact
