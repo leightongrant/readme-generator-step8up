@@ -14,7 +14,7 @@ def ask_questions():
 
     title = inquirer.text(
         message="What is the title of your project: ",
-        default="Readme Generator",
+        default="Your project title",
         mandatory=True,
         mandatory_message="Title cannot be empty",
         amark="✔",
@@ -22,7 +22,7 @@ def ask_questions():
 
     description = inquirer.text(
         message="Project Description: ",
-        default="A Python-based command-line tool to generate professional README.md files through a series of interactive prompts.",
+        default="Your project description",
         mandatory=True,
         amark="✔",
     ).execute()
@@ -33,7 +33,7 @@ def ask_questions():
         message="Enter installation instructions: ",
         instruction=instructions(),
         multiline=True,
-        default="* Clone repository: `git clone repo`",
+        default="""* Line One""",
         mandatory=True,
         amark="✔",
         wrap_lines=True
@@ -45,7 +45,7 @@ def ask_questions():
         message="Usage: ",
         instruction=instructions(),
         multiline=True,
-        default="* Answer each prompt with relevant information about your project",
+        default="* Line One",
         mandatory=True,
         amark="✔",
     ).execute()
@@ -69,7 +69,7 @@ def ask_questions():
     print_section_title("contact information")
 
     author = inquirer.text(
-        message="Author Name: ", default="Leighton Grant", mandatory=True, amark="✔",
+        message="Author Name: ", default="Author Name", mandatory=True, amark="✔",
     ).execute()
 
     contact = inquirer.text(
@@ -77,7 +77,7 @@ def ask_questions():
         instruction=instructions(),
         multiline=True,
         mandatory=True,
-        default="* Email: dev@leightongrant.me",
+        default="* Line One",
         amark="✔",
     ).execute()
 
